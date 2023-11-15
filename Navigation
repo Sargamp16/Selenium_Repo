@@ -1,0 +1,21 @@
+package automationframework;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class navigate {
+public static void main(String args[])
+{
+	System.setProperty("webdriver.chrome.driver", "/Users/....");
+	WebDriver driver = new ChromeDriver();
+	driver.get("https://rubicotech.com/");
+	driver.manage().window().maximize();
+	driver.findElement(By.xpath("/html/body/div[2]/main/section[1]/div[2]/div/a")).click();
+	driver.navigate().back();
+	driver.navigate().forward();
+	driver.navigate().to("https://rubicotech.com/");
+	driver.navigate().refresh();
+	driver.close();
+	}
+}

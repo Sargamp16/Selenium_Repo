@@ -1,4 +1,4 @@
-package automationframework;
+
 import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.Select;
 
 public class dropdown {
 public static void main(String args[]) {
-	System.setProperty("webdriver.chrome.driver", "/Users/stacysargam/Documents/Selenium/chromedriver-mac-x64/chromedriver");
+	System.setProperty("webdriver.chrome.driver", "/Users/...");
 	WebDriver driver = new ChromeDriver();
 	driver.get("https://demoqa.com/select-menu");
 	driver.manage().window().maximize();

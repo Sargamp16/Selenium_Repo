@@ -7,10 +7,11 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class practice1 {
 public static void main(String args[])
 {
-	System.setProperty("webdriver.chrome.driver", "/Users/stacysargam/Documents/Selenium/chromedriver-mac-x64/chromedriver");
+	System.setProperty("web driver.chrome.driver", "Actual Path of the Chrome Driver"); //Enter the actual path of the Chrome driver i.e. where is it being stored in the local device.
+        //Now there is no need to state the above-mentioned line since the 'Selenium Manager' now directly handles the Chrome driver(without actually downloading it to the local device) 
 	WebDriver driver = new ChromeDriver();
 	driver.get("https://www.techlistic.com/p/selenium-practice-form.html");
-	driver.findElement(By.name("firstname")).click();
+	driver.findElement(By.name("firstname")).click(); 
 	driver.findElement(By.name("firstname")).sendKeys("Test");
 	driver.findElement(By.name("lastname")).click();
 	driver.findElement(By.name("lastname")).sendKeys("Testone");

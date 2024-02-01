@@ -10,7 +10,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 
 
-public class window_task {				
+public class Window_Handle {				
 	  public static void main(String[] args) throws InterruptedException {									
 	    System.setProperty("webdriver.chrome.driver","/Users/stacysargam/Documents/Selenium/chromedriver-mac-x64/chromedriver");
 	    WebDriver driver = new ChromeDriver();

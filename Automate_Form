@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class practice1 {
+public class Automate_Form {
 public static void main(String args[])
 {
 	System.setProperty("web driver.chrome.driver", "Actual Path of the Chrome Driver"); //Enter the actual path of the Chrome driver i.e. where is it being stored in the local device.

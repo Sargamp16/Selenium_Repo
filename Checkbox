@@ -1,0 +1,25 @@
+package automationFramework;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.WebElement;
+
+public class Checkbox {
+	public static void main(String args[])
+	{
+		WebDriver driver=new ChromeDriver();
+	driver.get("https://www.techlistic.com/p/selenium-practice-form.html");	
+	
+    // if the element is not selected, check the condition and select it.
+	// Commonly used commands for checkbox :  isSlected() , isDisplayed(), isEnabled()
+	WebElement element1= driver.findElement(By.id("profession-0"));
+	boolean isSelected = element1.isSelected();
+	if (isSelected==false)
+	{
+		element1.click();
+	}
+	driver.close();
+	
+	}
+}

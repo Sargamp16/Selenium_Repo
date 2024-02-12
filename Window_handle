@@ -1,63 +1,44 @@
-package automationframework;
+/***
+* Site: " ToolsQA Demo Site": https://demoqa.com/browser-windows
+Click on the "New window"  button within the application, and a new browser window opens. 
+We will read the text from the newly opened window i.e." This is sample page" and will print it.
+*/
+
+
+package automationFramework;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.WebElement;
+
 import java.util.Iterator;
 import java.util.Set;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+public class Window_handle {
 
+	public static void main(String[] args) {
+		WebDriver driver=new ChromeDriver();
+		driver.get("https://demoqa.com/browser-windows");
+		driver.findElement(By.id("windowButton")).click();
+		
+		//handle all windows
+		String mainwindow=driver.getWindowHandle();
+		Set<String> allWindowHandles=driver.getWindowHandles();
+		Iterator<String> iterator =allWindowHandles.iterator();
+		
+		while(iterator.hasNext())
+		{
+			String childWindow=iterator.next();
+			if(!mainwindow.equalsIgnoreCase(childWindow))
+			{
+				driver.switchTo().window(childWindow);
+				WebElement element=driver.findElement(By.id("sampleHeading"));
+				System.out.println(element.getText());
+			}
+		}
+		driver.close();
+		
 
+	}
 
-
-public class Window_Handle {				
-	  public static void main(String[] args) throws InterruptedException {									
-	    System.setProperty("webdriver.chrome.driver","/Users/stacysargam/Documents/Selenium/chromedriver-mac-x64/chromedriver");
-	    WebDriver driver = new ChromeDriver();
-	    
-	    //Maximize the window
-	    
-	    driver.manage().window().maximize();
-	    
-	    //Open the window
-	    driver.get("https://demoqa.com/browser-windows");
-	
-	    // Get the parent window handle
-        String parentWindowHandle = driver.getWindowHandle();
-
-        // Click on the button to open new windows
-        driver.findElement(By.id("windowButton")).click();
-
-        // Handle windows
-        Set<String> windowHandles = driver.getWindowHandles();
-        Iterator<String> iterator = windowHandles.iterator();
-
-        // Print the heading of the parent window
-        System.out.println("Heading of parent window is " + driver.findElement(By.id("sampleHeading")).getText());
-
-        // Iterate through child windows
-        while (iterator.hasNext()) {
-            String childWindow = iterator.next();
-
-            if (!parentWindowHandle.equalsIgnoreCase(childWindow)) {
-                driver.switchTo().window(childWindow);
-
-                // Print the text present on the child window
-                WebElement textElement = driver.findElement(By.id("sampleHeading"));
-                System.out.println("Heading of child window is " + textElement.getText());
-
-                // Close the child window
-                driver.close();
-            }
-        }
-
-        // Switch back to the parent window
-        driver.switchTo().window(parentWindowHandle);
-
-     
-
-        // Close the main window (optional)
-        driver.quit();
-    }
 }
-	

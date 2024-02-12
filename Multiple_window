@@ -30,6 +30,6 @@ public class Mulitple_window {
 	                System.out.println("Child window closed");
 	}
 	  		}
-
+driver.quit();
 }
 	}

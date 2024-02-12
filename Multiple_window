@@ -1,0 +1,35 @@
+package automationFramework;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import java.util.Iterator;
+import java.util.Set;
+
+import org.openqa.selenium.By;
+
+public class Mulitple_window {
+
+	public static void main(String[] args) {
+		WebDriver driver=new ChromeDriver();
+		driver.get("https://demoqa.com/browser-windows");
+		// Opening all the child window
+	    driver.findElement(By.id("windowButton")).click();
+	    driver.findElement(By.id("messageWindowButton")).click();
+	    String MainWindow = driver.getWindowHandle();
+	    System.out.println("Main window handle is " + MainWindow);
+	  //handle all windows
+	  		Set<String> allWindowHandles=driver.getWindowHandles();
+	  		Iterator<String> iterator =allWindowHandles.iterator();
+	  		
+	  		while (iterator.hasNext()) {
+	            String ChildWindow = iterator.next();
+	            if (!MainWindow.equalsIgnoreCase(ChildWindow)) {
+	                driver.switchTo().window(ChildWindow);
+	                driver.close();
+	                System.out.println("Child window closed");
+	}
+	  		}
+
+}
+	}

@@ -1,0 +1,26 @@
+package automationFramework;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class iframe {
+
+	public static void main(String[] args) {
+		
+		WebDriver driver=new ChromeDriver();
+		driver.get("https://demoqa.com/frames");
+		//Switch by Index
+				driver.switchTo().frame(0);
+				driver.quit();
+	    //Switch by frame name
+				driver.switchTo().frame("iframe1");
+				driver.quit();
+	    //Switch by frame ID
+	 			driver.switchTo().frame("IF1");
+				driver.quit();
+		//Switch back to the main window
+				driver.switchTo().defaultContent();
+
+	}
+
+}

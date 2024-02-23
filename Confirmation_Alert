@@ -1,0 +1,22 @@
+package automationFramework;
+
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class confirmation_alert {
+
+	public static void main(String[] args) throws InterruptedException {
+		WebDriver driver=new ChromeDriver();
+		driver.get("https://demoqa.com/alerts");
+		Thread.sleep(2000);
+		driver.findElement(By.id("confirmButton")).click();
+		Alert confirmation_alert=driver.switchTo().alert();
+		String alertText = confirmation_alert.getText();
+		  System.out.println("Alert text is " + alertText);
+		confirmation_alert.accept();
+		
+	}
+
+}

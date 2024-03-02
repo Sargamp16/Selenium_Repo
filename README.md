@@ -15,9 +15,16 @@ What you will be able to achieve from this repo:
 In this repo, you will find some random Java automation code for features like : 
 1. Basic form
 2. Drop-down selection, 
-3. Get-Data, and
-4. Navigation, and
-5. Window Handling
+3. Get-Data,
+4. Navigation, 
+5. Window Handling,
+6. Multiple Window Handle,
+7. Broken_Links Check,
+8. Checkbox Functionality,
+9. Confirmation_Alert,
+10. Iframe,
+11. Simple Alert, and 
+12. Prompt Alert
 
 For any feedback or a little testing chit-chat:
 You can DM me on my LinkedIn profile.
